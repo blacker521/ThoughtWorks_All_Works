@@ -1,0 +1,16 @@
+/*.bg_left{*/
+    /*float: left;*/
+    /*width: 55%;*/
+    /*height:auto;*/
+/*}*/
+.bg_all{
+    width: 80%;
+    height:auto;
+}
+.Title{
+    font-size: 25px;
+}
+.Title:before{
+    font-size: 25px;
+    content: '//';
+}
