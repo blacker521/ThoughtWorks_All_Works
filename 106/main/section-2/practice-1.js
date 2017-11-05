@@ -1,17 +1,18 @@
 'use strict';
 
 module.exports = function countSameElements(collection) {
-  var result = [],j = 0,all = {},number= [];
-  for (var i=0;i<collection.length;i++){
-    all["name"] = collection[j];
-    number=collection.indexOf(collection[j]);
-    for (var z = 0;z<number.length;z++){
-      if (number[])
-          all["summary"] =
+    var result = [],i = 0,all = {};
+    while (1) {
+        if (i >= collection.length){
+            break;
+        }
+        all["key"] = collection[i];
+        all["count"] = collection.lastIndexOf(collection[i]) - collection.indexOf(collection[i]) + 1;
+        i = collection.lastIndexOf(collection[i]) + 1;
+        result.push(all);
     }
-    console.log(all);
-    j++;
-    result.push(all);
-  }
-  return ;
-};
+
+    return result;
+}
+
+
