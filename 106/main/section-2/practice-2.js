@@ -29,4 +29,3 @@ module.exports = function countSameElements(collection) {
 
     return result;
 }
-

@@ -11,5 +11,3 @@ module.exports = function collectSameElements(collectionA, objectB) {
     }
     return result;
 };
-
-
