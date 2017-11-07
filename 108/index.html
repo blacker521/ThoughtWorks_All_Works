@@ -46,7 +46,7 @@
         <div class="col-md-12">
             <div class="col-md-12 select"><input type="radio" name="Problem_3">(A) UML就是软件工程
             </div>
-            <div class="col-md-12 select"><input type="radio" name="Problem_3" onclick="Add_Score()">(B) UML参与到软件工程中软件开发过程的几个阶段
+            <div class="col-md-12 select"><input type="radio" name="Problem_3">(B) UML参与到软件工程中软件开发过程的几个阶段
             </div>
             <div class="col-md-12 select"><input type="radio" name="Problem_3">(C) UML与软件工程无关
             </div>
@@ -55,7 +55,7 @@
         </div>
         <p class="col-md-12">2. Java语言支持：</p>
         <div class="col-md-12">
-            <div class="col-md-12 select"><input type="radio" name="Problem_4" onclick="Add_Score()">(A) 单继承</div>
+            <div class="col-md-12 select"><input type="radio" name="Problem_4">(A) 单继承</div>
             <div class="col-md-12 select"><input type="radio" name="Problem_4">(B) 多继承</div>
             <div class="col-md-12 select"><input type="radio" name="Problem_4">(C) 单继承和多继承都支持</div>
             <div class="col-md-12 select"><input type="radio" name="Problem_4">(D) 单继承和多继承都不支持</div>
@@ -63,10 +63,10 @@
         <h3 class="col-md-12"><strong>三、多择题（每题10分，共20分）</strong></h3>
         <p class="col-md-12">1. 用例的粒度分为以下哪三种：</p>
         <div class="col-md-12">
-            <div class="col-md-12 select"><input type="checkbox" name="Problem_5" value="1">(A) 概述级</div>
-            <div class="col-md-12 select"><input type="checkbox" name="Problem_5" value="1">(B) 需求级</div>
-            <div class="col-md-12 select"><input type="checkbox" name="Problem_5" value="1">(C) 用户目标级</div>
-            <div class="col-md-12 select"><input type="checkbox" name="Problem_5" >(D) 子功能级</div>
+            <div class="col-md-12 select"><input type="checkbox" name="Problem_5">(A) 概述级</div>
+            <div class="col-md-12 select"><input type="checkbox" name="Problem_5">(B) 需求级</div>
+            <div class="col-md-12 select"><input type="checkbox" name="Problem_5">(C) 用户目标级</div>
+            <div class="col-md-12 select"><input type="checkbox" name="Problem_5">(D) 子功能级</div>
         </div>
         <p class="col-md-12">2. 类图由以下哪三部分组成：</p>
         <div class="col-md-12">
@@ -77,14 +77,18 @@
         </div>
         <h3 class="col-md-12"><strong>四、判断题（每题10分，共20分）</strong></h3>
         <div class="col-md-12">
-            <p class="col-md-12">1. 用例图只是用于和客户交流和沟通的,用于确定需求。<input type="radio" name="Problem_7">√<input type="radio" checked name="7">×</p>
+            <p class="col-md-12">1. 用例图只是用于和客户交流和沟通的,用于确定需求。<input type="radio" name="Problem_7">√<input type="radio"
+                                                                                                         name="Problem_7">×
+            </p>
         </div>
         <div class="col-md-12">
-            <p class="col-md-12">2. 在状态图中,终止状态在一个状态图中允许有任意多个。<input type="radio" checked name="Problem_8">√<input type="radio" name="8">×</p>
+            <p class="col-md-12">2. 在状态图中,终止状态在一个状态图中允许有任意多个。<input type="radio" name="Problem_8">√<input type="radio"
+                                                                                                          name="Problem_8">×
+            </p>
         </div>
         <h3 class="col-md-12"><strong>五、简答题（每题20分，共20分）</strong></h3>
         <p class="col-md-12">1. 简述什么是模型以及模型的表现形式？</p>
-        <div class="col-md-12"><textarea style="width: 70%;height: 90px; " name="Problem_9">模型是对现实世界的简化和抽象，模型是对所研究的系统、过程、事物或概念的一种表达方式。可以是物理实体；可以是某种图形；或者是一种数学表达式。</textarea>
+        <div class="col-md-12"><textarea style="width: 70%;height: 90px; " name="Problem_9"></textarea>
         </div>
         <input type="button" onclick="score()" value="计算分数">
     </form>
@@ -94,35 +98,59 @@
 <script type="text/javascript" src="../common/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="../common/js/bootstrap.min.js"></script>
 <script>
-    var All_Score = 0;
-    function Add_Score() {
-        All_Score = All_Score + 5;
-        return All_Score;
-    };
     function score() {
+        var All_Score = 0;
         var fm = document.form_text;
-
+        //填空题
         if (fm.elements[0].value == "统计建模语言") {
             All_Score = All_Score + 5;
         }
         for (var i = 1; i <= 3; i++) {
             if (fm.elements[i].value == "继承性") {
                 All_Score = All_Score + 5;
-                continue;
+                break;
             }
-            if (fm.elements[i].value == "封装性") {
+            else if (fm.elements[i].value == "封装性") {
                 All_Score = All_Score + 5;
-                continue;
+                break;
             }
-            if (fm.elements[i].value == "多态性") {
+            else if (fm.elements[i].value == "多态性") {
                 All_Score = All_Score + 5;
-                continue;
+                break;
             }
         }
+        //单选题
+        var i = document.getElementsByName("Problem_3")
+        if (i[1].checked) {
+            All_Score = All_Score + 5;
+        }
+        var i = document.getElementsByName("Problem_4")
+        if (i[0].checked) {
+            All_Score = All_Score + 5;
+        }
+        //多选题
         var i = document.getElementsByName("Problem_5");
-        if (i[0].checked & i[1].checked & i[2].checked){
-            alert(All_Score)
+        if (i[0].checked && i[1].checked && i[3].checked) {
+            All_Score = All_Score + 10;
         }
+        var i = document.getElementsByName("Problem_6");
+        if (i[0].checked && i[1].checked && i[2].checked) {
+            All_Score = All_Score + 10;
+        }
+        //判断题
+        var i = document.getElementsByName("Problem_7");
+        if (i[1].checked) {
+            All_Score = All_Score + 10;
+        }
+        var i = document.getElementsByName("Problem_8");
+        if (i[0].checked) {
+            All_Score = All_Score + 10;
+        }
+        //简答题
+        if (fm.elements[24].value =="模型是对现实世界的简化和抽象，模型是对所研究的系统、过程、事物或概念的一种表达方式。可以是物理实体；可以是某种图形；或者是一种数学表达式。") {
+            All_Score = All_Score + 20;
+        }
+        alert(All_Score);
     };
 
 
