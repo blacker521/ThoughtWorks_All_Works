@@ -27,14 +27,14 @@
     <div class="row">
         <h4 class="col-md-2">考试科目：</h4>
         <h4 class="col-md-2">时间：100分钟</h4>
-        <h4 class="col-md-2">得分：</h4>
+        <h4 class="col-md-2" id="Score">得分：0</h4>
     </div>
     <div class="row">
         <h4 class="col-md-2">班级：<input value="1班"></h4>
         <h4 class="col-md-2">学号：<input value="001"></h4>
         <h4 class="col-md-2">姓名：<input value="王小闹"></h4>
     </div>
-    <form action="index.html" onsubmit="return score(this)" method="post" name="form_text">
+    <form action="index.html" method="post" name="form_text">
         <h3 class="col-md-12"><strong>一、填空题（每空5分，共20分）</strong></h3>
         <p class="col-md-12">1. UML的中文全称是：<input value="" name="Problem_1"></p>
         <p class="col-md-12">2. 对象最突出的特征是：<input value="" name="Problem_2"><input value="" name="Problem_2"><input
@@ -99,32 +99,44 @@
 <script type="text/javascript" src="../common/js/bootstrap.min.js"></script>
 <script>
     function score() {
+
         var All_Score = 0;
         var fm = document.form_text;
-        //填空题
+        //判断是否有未答题
+        for(var l=0;l<document.form_text.elements.length-1;l++)
+        {
+         if(document.form_text.elements[l].value=="")
+         {
+           alert("有题目未作答");
+           document.form_text.elements[l].focus();
+           return false;
+         }
+        }
+        return true;
+                //填空题
         if (fm.elements[0].value == "统计建模语言") {
             All_Score = All_Score + 5;
         }
-        for (var i = 1; i <= 3; i++) {
+        for (var i=1;i<=3;i++) {
             if (fm.elements[i].value == "继承性") {
                 All_Score = All_Score + 5;
-                break;
+                continue;
             }
             else if (fm.elements[i].value == "封装性") {
                 All_Score = All_Score + 5;
-                break;
+                continue;
             }
-            else if (fm.elements[i].value == "多态性") {
+            if (fm.elements[i].value == "多态性") {
                 All_Score = All_Score + 5;
-                break;
+                continue;
             }
         }
         //单选题
-        var i = document.getElementsByName("Problem_3")
+        var i = document.getElementsByName("Problem_3");
         if (i[1].checked) {
             All_Score = All_Score + 5;
         }
-        var i = document.getElementsByName("Problem_4")
+        var i = document.getElementsByName("Problem_4");
         if (i[0].checked) {
             All_Score = All_Score + 5;
         }
@@ -150,8 +162,8 @@
         if (fm.elements[24].value =="模型是对现实世界的简化和抽象，模型是对所研究的系统、过程、事物或概念的一种表达方式。可以是物理实体；可以是某种图形；或者是一种数学表达式。") {
             All_Score = All_Score + 20;
         }
-        alert(All_Score);
-    };
+        document.getElementById("Score").innerHTML="得分：" + All_Score;
+    }
 
 
 </script>
