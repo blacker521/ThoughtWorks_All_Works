@@ -9,8 +9,9 @@ class Class{
         if(Student.klass.number === this.number)
         {
             this.leader = Student;
+            // Student.id = 2;
         }
-        Student.id = 2;
+       
     }
 
 }

@@ -20,11 +20,8 @@
   "devDependencies": {
     "jasmine": "^2.6.0",
     "sinon": "^2.3.5"
-<<<<<<< HEAD
   },
   "dependencies": {
     "scanf": "^1.0.0"
-=======
->>>>>>> e069dc259d8362ef10dbb25a591fba9c92ce15cf
   }
 }

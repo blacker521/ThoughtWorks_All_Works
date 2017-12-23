@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 let scanf = require("scanf");
 let database = require("./database");
 
@@ -78,8 +77,3 @@ main();
 module.exports = () => {
     main();
 };
-=======
-module.exports = () => {
-
-}
->>>>>>> e069dc259d8362ef10dbb25a591fba9c92ce15cf

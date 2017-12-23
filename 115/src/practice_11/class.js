@@ -9,7 +9,7 @@ class Class{
     assignLeader(Student){
         if(Student.klass.number === this.number){
             this.leader = Student;
-            Student.id = 2;
+            // Student.id = 2;
             if( this.teacher && Student )
                 console.log("I am " + this.teacher.name + ". I know " + Student.name + " become Leader of Class " + this.number + ".");
         }

@@ -5,7 +5,7 @@ class Student extends Person{
         this.klass = Class;
     }
     introduce(){
-        if(this.id !== 1){
+        if( this.klass.leader){
             return super.introduce()+ ' I am a Student. I am Leader of '+ this.klass.getDisplayName() +'.'
         }
         else

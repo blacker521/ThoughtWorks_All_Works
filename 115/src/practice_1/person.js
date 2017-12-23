@@ -1,5 +1,4 @@
-module.exports = Person;
-class Person {
+class Person{
     constructor(name,age){
         this.age = age;
         this.name = name;

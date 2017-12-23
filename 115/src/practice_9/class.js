@@ -8,7 +8,7 @@ class Class{
     assignLeader(Student){
         if(Student.klass.number === this.number){
             this.leader = Student;
-            Student.id = 2;
+            // Student.id = 2;
         }
         else{
             console.log('It is not one of us.')
