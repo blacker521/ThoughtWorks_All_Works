@@ -6,12 +6,19 @@ describe('main()', () => {
     it('should display main menu once started', () => {
         sinon.spy(console, 'log');
         main();
+<<<<<<< HEAD
         expect(console.log.args.join()).toBe(`
             1. 添加学生
             2. 生成成绩单
             3. 退出
             请输入你的选择（1～3）：
         `);
+=======
+        expect(console.log.args.join()).toBe(`1. 添加学生
+2. 生成成绩单
+3. 退出
+请输入你的选择（1～3）：`);
+>>>>>>> e069dc259d8362ef10dbb25a591fba9c92ce15cf
     });
 
 });
