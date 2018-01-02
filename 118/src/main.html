@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="../node_modules/lodash/lodash.min.js"></script>
+    <link rel="stylesheet" href="../../common/css/bootstrap.min.css">
+    <title>Form Designer</title>
+    <style>
+        #Compile,#Add {
+            display: none
+        }
+    </style>
+</head>
+
+<body>
+<div>
+    <div id="container">
+        <button id="Input" class="btn btn-success">添加</button>
+        <button id="Preview" class="btn btn-info">预览</button>
+        <button id="Compile" class="btn btn-warning">编辑</button>
+    </div>
+
+    <div id="Add">
+
+        名称
+        <select id="Add_Name">
+            <option value="文本">文本</option>
+            <option value="日期">日期</option>
+        </select>
+
+        类型
+        <select id="Add_Type">
+            <option value="text">姓名</option>
+            <option value="password">密码</option>
+            <option value="radio">性别</option>
+            <option value="text">简介</option>
+        </select>
+        <button id="Add_New" class="btn btn-success">新增</button>
+    </div>
+</div>
+</body>
+<script src="js/main.js"></script>
+</html>
